@@ -4,7 +4,7 @@
 export default {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable('categorias',
-       { 
+      {
         id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
@@ -17,9 +17,9 @@ export default {
         },
         createdAt: { type: Sequelize.DATE },
         updatedAt: { type: Sequelize.DATE },
-        deletedAt: { type: Sequelize.DATE } 
-       });
-     
+        deletedAt: { type: Sequelize.DATE },
+    });
+
   },
 
   async down (queryInterface, Sequelize) {

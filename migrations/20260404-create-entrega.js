@@ -7,9 +7,12 @@ export default {
       pedido_id :{
         type : Sequelize.INTEGER,
         allowNull : false,
-        primaryKey : true,
-        references : { model : 'pedidos', key : 'id', onDelete : 'CASCADE' , onUpdate : 'CASCADE' }
+        references : { model : 'pedidos',
+          key : 'id'
       },
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE'
+    },
       codigo_rastreio:{
         type: Sequelize.STRING,
         allowNull : false,

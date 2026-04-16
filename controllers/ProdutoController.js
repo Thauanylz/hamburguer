@@ -55,3 +55,13 @@ export const deletar = async (req, res) => {
         res.status(500).json({ erro: error.message });
     }
 };
+
+const ProdutoController = {
+    create: criar,
+    findAll: listar,
+    findById: obterPorId,
+    update: atualizar,
+    delete: deletar
+};
+
+export default ProdutoController;

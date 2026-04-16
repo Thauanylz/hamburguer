@@ -4,12 +4,13 @@
 export default{
   async up (queryInterface, Sequelize) {
     
-    await queryInterface.createTable('produtos', 
-      { 
+    await queryInterface.createTable('produtos',
+      {
         id:{
           type : Sequelize.INTEGER,
           allowNull : false,
-          primaryKey : true
+          primaryKey : true,
+          autoIncrement: true,
         },
         nome: { type: Sequelize.STRING, allowNull: false },
         descricao: { type: Sequelize.TEXT },
@@ -23,7 +24,7 @@ export default{
         },
         createdAt: { type: Sequelize.DATE },
         updatedAt: { type: Sequelize.DATE },
-        deletedAt: { type: Sequelize.DATE } 
+        deletedAt: { type: Sequelize.DATE }
     });
     
   },

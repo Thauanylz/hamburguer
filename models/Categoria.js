@@ -1,19 +1,17 @@
-import { Model, DataTypes } from 'sequelize';
-import sequelize from "./Database.js";
+import sequelize from "../config/database.js";
+import { Model, DataTypes } from "sequelize";
 
 export default class Categoria extends Model {
-
-    static associate (models){
-        Categoria.hasMany(models.Produto,{
-            foreignKey: 'categoriaId',
-            as : 'produtos'
-        })
+    static associate(models) {
+    Categoria.hasMany(models.Produto, {
+        foreignKey: "categoriaId",
+        as: "produtos"
+    });
     }
-
 }
 
 Categoria.init(
-  {
+    {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -21,17 +19,14 @@ Categoria.init(
     },
     nome: {
         type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: { msg: 'O nome não pode ser vazio' }
-        }
+        allowNull: false
     }
-  },
-  {
+    },
+    {
     sequelize,
-    modelName: 'Categoria',
-    tableName: 'categorias',
-    paranoid: true,    // ativa soft delete
-    timestamps: true
-  }
+    modelName: "Categoria",
+    tableName: "categorias",
+    timestamps: true,
+    paranoid: true
+    }
 );
